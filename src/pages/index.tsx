@@ -1,13 +1,14 @@
 import React, { FC } from "react";
-import styles from '../styles/Home.module.css'
-import CounterPage from './counter'
+import styles from "src/components/styles/Home.module.css";
+import Universities from "src/components/universities";
 
-const Home: FC = () => {
+const TopPage: FC = () => {
   return (
     <div className={styles.container}>
-      <CounterPage />
+      <h1>CampassOne</h1>
+      <Universities />
     </div>
-  )
-}
+  );
+};
 
-export default Home;
+export default TopPage;
