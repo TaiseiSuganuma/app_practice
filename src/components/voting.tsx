@@ -1,7 +1,7 @@
 import React from "react";
 import Router from "next/router";
 
-export default function Voting() {
+const Voting = () => {
   function handleSubmit() {
     Router.push("/thanks");
     return;
@@ -12,4 +12,6 @@ export default function Voting() {
       <button onClick={handleSubmit}>投票</button>
     </div>
   );
-}
+};
+
+export default Voting;
