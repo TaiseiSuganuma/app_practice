@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-function Universities() {
+const Universities = () => {
   return (
     <ul>
       <li>
@@ -21,6 +21,6 @@ function Universities() {
       </li>
     </ul>
   );
-}
+};
 
 export default Universities;
