@@ -1,16 +1,26 @@
 import React, { FC } from "react";
 import styles from "src/components/styles/Home.module.css";
 import Universities from "src/components/universities";
+import { getSortedPostsData } from "lib/posts";
 
-const TopPage: FC = () => {
+export async function getStaticProps() {
+  const allPostsData = getSortedPostsData();
+  return {
+    props: {
+      allPostsData,
+    },
+  };
+}
+
+const TopPage: FC = ({ allPostsData }) => {
   return (
     <div className={styles.container}>
       <h1>CampassOne</h1>
-      <>
-        <Universities link={"/aoyama_univ"} name={"青山学院大学"} />
-        <Universities link={"/keio_univ"} name={"慶應義塾大学"} />
-        <Universities link={"/waseda_univ"} name={"早稲田大学"} />
-      </>
+      {allPostsData.map(({ id, link, name }) => {
+        <>
+          <Universities id={id} link={link} name={name} />;
+        </>;
+      })}
     </div>
   );
 };

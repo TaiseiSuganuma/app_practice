@@ -9,6 +9,6 @@ addDecorator(withInfo);
 addDecorator(withKnobs);
 addDecorator(withA11y);
 
-const req = requireContext('../src/components', true, /.stories.tsx$/);
+const req = requireContext('../src/components', true, /\.stor(y|ies)\.tsx$/);
 
 configure(req, module);

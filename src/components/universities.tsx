@@ -5,7 +5,7 @@ const Universities = (props) => {
   return (
     <ul>
       <li>
-        <Link href={props.link}>
+        <Link href={props.link} key={props.id}>
           <a>{props.name}</a>
         </Link>
       </li>
