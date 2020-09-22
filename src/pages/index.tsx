@@ -18,7 +18,7 @@ const TopPage: FC = ({ allPostsData }) => {
       <h1>CampassOne</h1>
       {allPostsData.map(({ id, link, name }) => {
         <>
-          <Universities id={id} link={link} name={name} />;
+          <Universities id={`${id}`} link={`${link}`} name={`${name}`} />;
         </>;
       })}
     </div>
