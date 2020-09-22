@@ -1,7 +1,7 @@
 const universities = [
-  { name: "青山学院大学", link: "aoyama_univ" },
-  { name: "慶應義塾大学", link: "keio_univ" },
-  { name: "早稲田大学", link: "waseda_univ" },
+  { id: 0, name: "青山学院大学", link: "aoyama_univ" },
+  { id: 1, name: "慶應義塾大学", link: "keio_univ" },
+  { id: 2, name: "早稲田大学", link: "waseda_univ" },
 ];
 
 export default {
@@ -9,8 +9,8 @@ export default {
 
   post({ data }) {
     universities.push({
+      id: universities.length,
       name: data.name,
-      link: data.link,
     });
 
     return [201];
