@@ -1,21 +1,21 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-export type CounterState = {
+export type VotingState = {
   count: number;
   loading: boolean;
   error: boolean;
   errorMessage: string;
 };
 
-export const initialState: CounterState = {
+export const initialState: VotingState = {
   count: 0,
   loading: false,
   error: false,
-  errorMessage: '',
+  errorMessage: "",
 };
 
 const counterSlice = createSlice({
-  name: 'counter',
+  name: "Voting",
   initialState,
   reducers: {
     incrementCounter: (state, action: PayloadAction<number>) => ({
