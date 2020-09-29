@@ -42,6 +42,7 @@
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
     "axios": "^0.20.0",
+    "axios-mock-adapter": "^1.18.2",
     "axios-mock-server": "^0.19.0",
     "babel-loader": "^8.1.0",
     "babel-preset-react-app": "^9.1.2",
