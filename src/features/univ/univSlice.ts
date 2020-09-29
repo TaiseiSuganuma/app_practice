@@ -1,31 +1,49 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import axios from "axios";
-import mock from "mocks/$mock";
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import UnivsAPI, {
+  FetchUnivsRequest,
+  FetchUnivsResponse,
+  ListUnivsResponse,
+} from "~/api/UnivsAPI";
+import UnivsEntity from "~/entities/UnivsEntity";
 
-export type VotingState = {
-  count: number;
-  loading: boolean;
-  error: boolean;
-  errorMessage: string;
+const name = "univsSlice";
+
+export type UnivsState = {
+  loadingList: boolean;
+  loadingListError: boolean;
+  loadingFetch: boolean;
+  loadingFetchError: boolean;
+  list: UnivsEntity[];
+  data: UnivsEntity;
 };
 
-export const initialState: VotingState = {};
+const initialState: UnivsState = {
+  loadingList: false,
+  loadingListError: false,
+  loadingFetch: false,
+  loadingFetchError: false,
+  list: [],
+  data: {},
+};
 
-const votingSlice = createSlice({
-  name: "Voting",
+const listUnivsAction = createAsyncThunk<ListUnivsResponse, void>(
+  `${name}/listUnivsAction`,
+  (): Promise<ListUnivsResponse> => UnivsAPI.list()
+);
+
+const fetchUnivsAction = createAsyncThunk<
+  FetchUnivsResponse,
+  FetchUnivsRequest
+>(
+  `${name}/fetchUnivsAction`,
+  (payload): Promise<FetchUnivsResponse> => UnivsAPI.fetch(payload)
+);
+
+const univsSlice = createSlice({
+  name,
   initialState,
-  reducers: {
-    fetchUnivData: (state, action: PayloadAction) => ({
-      ...state,
-      mock() {
-        axios.get("https://google.com/v1/universities").then((university) => {
-          id: university.id,
-          name: uiniversity.name,
-          link: university.link  
-        })
-      }
-    }),
-  },
-});
-
-export default votingSlice;
+  reducers: {},
+  extraReducers: {
+    [listUnivsAction.pending.type]: (state: )
+  }
+})
