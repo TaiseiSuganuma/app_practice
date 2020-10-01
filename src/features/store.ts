@@ -1,7 +1,7 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { logger } from "redux-logger";
 
-import univsSlice from "./univ/univsSlice";
+import univsSlice from "./univ/univSlice";
 
 export const rootReducer = combineReducers({
   univ: univsSlice.reducer,
