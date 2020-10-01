@@ -44,6 +44,50 @@ const univsSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: {
-    [listUnivsAction.pending.type]: (state: )
-  }
-})
+    [listUnivsAction.pending.type]: (state: UnivsState): UnivsState => ({
+      ...state,
+      loadingList: true,
+      loadingListError: false,
+    }),
+    [listUnivsAction.fulfilled.type]: (
+      state: UnivsState,
+      action: PayloadAction<ListUnivsResponse>
+    ): UnivsState => ({
+      ...state,
+      loadingList: false,
+      list: action.payload,
+    }),
+    [listUnivsAction.rejected.type]: (state: UnivsState): UnivsState => ({
+      ...state,
+      loadingList: false,
+      loadingListError: true,
+      list: [],
+    }),
+    [fetchUnivsAction.pending.type]: (state: UnivsState): UnivsState => ({
+      ...state,
+      loadingList: true,
+      loadingListError: false,
+    }),
+    [fetchUnivsAction.fulfilled.type]: (
+      state: UnivsState,
+      action: PayloadAction<ListUnivsResponse>
+    ): UnivsState => ({
+      ...state,
+      loadingList: false,
+      data: action.payload,
+    }),
+    [fetchUnivsAction.rejected.type]: (state: UnivsState): UnivsState => ({
+      ...state,
+      loadingList: false,
+      loadingListError: true,
+      data: {},
+    }),
+  },
+});
+
+export const actions = {
+  ...univsSlice.actions,
+  listUnivsAction,
+  fetchUnivsAction,
+};
+export default univsSlice;
