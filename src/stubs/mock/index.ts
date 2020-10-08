@@ -1,7 +1,7 @@
 import { AxiosInstance } from "axios";
-import { MockAdapter } from "axios-mock-adapter";
-import { UnivEntity } from "~/entities/UnivsEntity";
-import { univs } from "./univs.json";
+import MockAdapter from "axios-mock-adapter";
+import UnivEntity from "~/entities/UnivsEntity";
+import univs from "./univs.json";
 
 const axiosMock = (instance: AxiosInstance): void => {
   const mock = new MockAdapter(instance);

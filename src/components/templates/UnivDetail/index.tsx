@@ -6,7 +6,7 @@ import styles from "./styles.module.css";
 type Props = {
   loading?: boolean;
   error?: boolean;
-  item: SampleEntity;
+  item: UnivsEntity;
 };
 
 const UnivDetailTemplate: FC<Props> = ({ loading, error, item }) => (

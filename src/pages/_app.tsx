@@ -1,14 +1,12 @@
-import React from "react";
 import { AppProps } from "next/app";
+// eslint-disable-next-line no-use-before-define
+import React, { FC } from "react";
 import { Provider } from "react-redux";
-import createStore from "../store/createStore";
+import store from "~/features/store";
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
-  return (
-    <Provider store={createStore()}>
-      <Component {...pageProps} />
-    </Provider>
-  );
-};
-
-export default MyApp;
+const App: FC<AppProps> = ({ Component, pageProps }: AppProps) => (
+  <Provider store={store}>
+    <Component {...pageProps} />
+  </Provider>
+);
+export default App;

@@ -2,7 +2,7 @@
 import React, { FC } from "react";
 import Link from "~/components/atoms/Link";
 import UnivsEntity from "~/entities/UnivsEntity";
-import styles from "./SampleListItem.module.css";
+import styles from "./UnivListItem.module.css";
 
 type Props = {
   item: UnivsEntity;

@@ -1,34 +1,16 @@
+// eslint-disable-next-line no-use-before-define
 import React, { FC } from "react";
-import styles from "src/components/styles/Home.module.css";
-import Universities from "src/components/universities";
-import { getSortedPostsData } from "lib/posts";
-import axios from "axios";
-import mock from "mocks/$mock";
+import Head from "next/head";
+import HomeTemplate from "~/components/templates/Home";
 
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
-  return {
-    props: {
-      allPostsData,
-    },
-  };
-}
-
-const TopPage: FC = ({ allPostsData }) => {
+const HomePage: FC = () => {
   return (
-    <div className={styles.container}>
-      <h1>CampassOne</h1>
-      <>
-        <Universities link="aoyama_univ" name="青山学院大学" />
-      </>
+    <div>
+      <Head>
+        <title>TOP</title>
+      </Head>
+      <HomeTemplate></HomeTemplate>
     </div>
   );
 };
-
-mock();
-
-axios.get("https://google.com/v1/universities").then((university) => {
-  console.log(university);
-});
-
-export default TopPage;
+export default HomePage;

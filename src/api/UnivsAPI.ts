@@ -1,5 +1,5 @@
 import UnivsEntity from "~/entities/UnivsEntity";
-import axios from "~utils/axios";
+import axios from "~/utils/axios";
 
 export type ListUnivsResponse = UnivsEntity[];
 export type FetchUnivsRequest = { id: string };
