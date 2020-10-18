@@ -1,24 +1,24 @@
 // eslint-disable-next-line no-use-before-define
 import React, { FC } from "react";
-import UnivList from "~/components/organisms/UnivList";
-import UnivsEntity from "~/entities/UnivsEntity";
+import ContestList from "~/components/organisms/ContestList";
+import ContestsEntity from "~/entities/ContestsEntity";
 import styles from "./styles.module.css";
 
 type Props = {
   loading?: boolean;
   error?: boolean;
-  items: UnivsEntity[];
+  items: ContestsEntity[];
 };
 
-const UnivsListTemplate: FC<Props> = ({ loading, error, items }) => (
+const ContestsListTemplate: FC<Props> = ({ loading, error, items }) => (
   <div className={styles.container}>
     <main>
       <h2>
         {loading ? "ローディング中…" : ""}
         {error ? "失敗しました" : ""}
       </h2>
-      <UnivList items={items}></UnivList>
+      <ContestList items={items}></ContestList>
     </main>
   </div>
 );
-export default UnivsListTemplate;
+export default ContestsListTemplate;

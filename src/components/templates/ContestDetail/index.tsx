@@ -1,15 +1,15 @@
 // eslint-disable-next-line no-use-before-define
 import React, { FC } from "react";
-import UnivsEntity from "~/entities/UnivsEntity";
+import ContestsEntity from "~/entities/ContestsEntity";
 import styles from "./styles.module.css";
 
 type Props = {
   loading?: boolean;
   error?: boolean;
-  item: UnivsEntity;
+  item: ContestsEntity;
 };
 
-const UnivDetailTemplate: FC<Props> = ({ loading, error, item }) => (
+const ContestDetailTemplate: FC<Props> = ({ loading, error, item }) => (
   <div className={styles.container}>
     <main>
       <h2>{loading ? "ローディング中…" : ""}</h2>
@@ -23,4 +23,4 @@ const UnivDetailTemplate: FC<Props> = ({ loading, error, item }) => (
     </main>
   </div>
 );
-export default UnivDetailTemplate;
+export default ContestDetailTemplate;

@@ -1,10 +1,10 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { logger } from "redux-logger";
 
-import univsSlice from "./univ/univSlice";
+import contestsSlice from "./contest/contestsSlice";
 
 export const rootReducer = combineReducers({
-  univ: univsSlice.reducer,
+  contest: contestsSlice.reducer,
 });
 const store = configureStore({
   reducer: rootReducer,

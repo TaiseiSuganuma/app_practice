@@ -3,13 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "export MOCK=true && next dev",
     "build": "next build",
     "start": "next start",
-    "storybook": "start-storybook -s ./public -p 6006",
-    "mock:build": "axios-mock-server -b",
-    "mock:watch": "axios-mock-server -w",
-    "mock:config": "axios-mock-server -b -c settings/.mockserverrc"
+    "lint:src": "eslint --ext .ts,.js,.tsx ./src",
+    "lint": "eslint --ext .ts,.js,.tsx ./src",
+    "fix": "eslint --ext .ts,.js,.tsx ./src --fix",
+    "test": "jest",
+    "coverage": "codecov",
+    "storybook": "start-storybook -p 6006"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.4.0",

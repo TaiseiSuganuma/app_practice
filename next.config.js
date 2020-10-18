@@ -1,11 +1,7 @@
-const path = require("path");
-
+const { MOCK, API_BASE_URL } = process.env;
 module.exports = {
-  webpack: (config) => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      "~": path.resolve(__dirname, "./src"),
-    };
-    return config;
+  env: {
+    MOCK,
+    API_BASE_URL,
   },
 };
