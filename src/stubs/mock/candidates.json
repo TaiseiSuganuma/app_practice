@@ -1,0 +1,22 @@
+[
+  {
+    "contest": {
+      "contestId": "1",
+      "contestName": "ミス青山コンテスト 2020"
+    },
+    "candidates": [
+      {
+        "candidateId": "1",
+        "fullname": "hogehoge子"
+      },
+      {
+        "candidateId": "2",
+        "fullname": "piyopiyo子"
+      },
+      {
+        "candidateId": "3",
+        "fullname": "hugahuga子"
+      }
+    ]
+  }
+]

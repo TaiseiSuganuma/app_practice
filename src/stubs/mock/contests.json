@@ -1,14 +1,14 @@
 [
    {
-     "id": "1",
-     "name": "ミス青山コンテスト 2020"
+     "contestId": "1",
+     "contestName": "ミス青山コンテスト 2020"
    },
    {
-     "id": "2",
-     "name": "Miss TGU Contest 2020"
+     "contestId": "2",
+     "contestName": "Miss TGU Contest 2020"
    },
    {
-     "id": "3",
-     "name": "Miss Chuo Contest 2020"
+     "contestId": "3",
+     "contestName": "Miss Chuo Contest 2020"
    }
 ]
